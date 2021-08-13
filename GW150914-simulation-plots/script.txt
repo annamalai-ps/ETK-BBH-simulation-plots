@@ -1,0 +1,64 @@
+plot_ah_separation.py --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --horizons 1 2
+plot_ah_coordinate_velocity.py --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --horizon 1
+plot_ah_coordinate_velocity.py --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --horizon 2
+plot_ah_coordinate_velocity.py --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --horizon 3
+plot_ah_found.py --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --horizons 1 2 3
+plot_ah_radius.py --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --horizon 1
+plot_ah_radius.py --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --horizon 2
+plot_ah_radius.py --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --horizon 3
+plot_constraints.py 
+plot_em_energy.py 
+--------------------------------------------------------------------------------------------
+plot_grid_var.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --ah-show
+log:
+2021-06-02 14:57:23,704 - Reading variable phi
+2021-06-02 14:57:23,844 - Prepared SimDir
+2021-06-02 14:57:23,931 - Variables available
+Available grid data of dimension 2D (xy):
+['phi', 'Psi4i', 'trK', 'alpha', 'Psi4r', 'y', 'x', 'r', 'z']
+
+2021-06-02 14:57:57,606 - Read variable phi
+2021-06-02 14:57:57,612 - Using iteration 789504 (time = 1698.3011868131866)
+2021-06-02 14:57:57,612 - Plotting on grid with x0 = [0, 0], x1 = [1, 1], shape = [500, 500]
+2021-06-02 14:58:00,532 - Using label phi
+2021-06-02 14:58:00,532 - Resampling and plotting
+2021-06-02 14:58:16,046 - Plotting apparent horizon 1
+Traceback (most recent call last):
+  File "./kuibit/examples/bins/plot_grid_var.py", line 180, in <module>
+    plot_horizon_on_plane_at_iteration(
+  File "/home/malai63/jupyter_py3/lib/python3.8/site-packages/kuibit/visualize_matplotlib.py", line 152, in inner
+    return func(*args, **kwargs)
+  File "/home/malai63/jupyter_py3/lib/python3.8/site-packages/kuibit/visualize_matplotlib.py", line 1037, in plot_horizon_on_plane_at_iteration
+    return _plot_horizon_on_plane(
+  File "/home/malai63/jupyter_py3/lib/python3.8/site-packages/kuibit/visualize_matplotlib.py", line 152, in inner
+    return func(*args, **kwargs)
+  File "/home/malai63/jupyter_py3/lib/python3.8/site-packages/kuibit/visualize_matplotlib.py", line 974, in _plot_horizon_on_plane
+    shape = horizon.shape_outline_at_iteration(iteration, cut[plane])
+  File "/home/malai63/jupyter_py3/lib/python3.8/site-packages/kuibit/cactus_horizons.py", line 470, in shape_outline_at_iteration
+    if iteration not in self.shape_iterations:
+AttributeError: 'OneHorizon' object has no attribute 'shape_iterations'
+--------------------------------------------------------------------------------------------------
+
+plot_gw_energy.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --detector-num 1 --pcut 1700
+plot_gw_energy.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --detector-num 3 --pcut 1700
+plot_gw_energy.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --detector-num 6 --pcut 1700
+
+what is pcut??
+---------------------------------
+plot_gw_linear_momentum.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --xmin 300 --xmax 1000 --detector-num 1 --pcut 1700
+plot_gw_linear_momentum.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --xmin 300 --xmax 1000 --detector-num 3 --pcut 1700
+plot_gw_linear_momentum.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --xmin 300 --xmax 1000 --detector-num 6 --pcut 1700
+
+
+plot_phi_lm.py
+
+plot_psi4_lm.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --xmin 780 --xmax 1100 --detector-num 1 --mult-l 2 --mult-m 2
+plot_psi4_lm.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --xmin 1200 --xmax 1520 --detector-num 6 --mult-l 2 --mult-m 2
+
+plot_strain_lm.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --detector-num 1 --pcut 40 --mult-l 2 --mult-m 2 --window tukey --window-args 0.8
+plot_strain_lm.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --detector-num 3 --pcut 40 --mult-l 2 --mult-m 2 --window tukey --window-args 0.8
+plot_strain_lm.py -v --datadir ~/scratch/simulations/GW150914 --outdir ~/kout --detector-num 6 --pcut 40 --mult-l 2 --mult-m 2 --window tukey --window-args 0.8
+
+
+
+
